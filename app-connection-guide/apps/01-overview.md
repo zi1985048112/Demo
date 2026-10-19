@@ -7,7 +7,7 @@
 | 应用 | 接入方式 | 状态 | 接入后能做什么（简要） |
 |---|---|---|---|
 | **IM 聊天渠道** |  |  |  |
-| Microsoft Teams | 渠道组件（Azure 机器人 + Teams 应用包，需公网 HTTPS 回调） | ✅ | 私聊、群聊 @ 对话，主动发消息、收发图片；Team 频道 / 文件 / 语音未测 |
+| Microsoft Teams | 渠道组件（Azure 机器人 + Teams 应用包，需公网 HTTPS 回调） | ✅ | 私聊、群聊、Team 频道 @ 对话，主动发消息、收发图片；能收文件 / 音视频（开通转写后可转文字）；❌ 不能发图片以外的文件、不支持语音消息 |
 | Slack | 渠道组件（Socket Mode，不需公网） | ✅ | 私聊、频道 @ 对话，线程回复、Markdown；私有频道 / 文件收发未测 |
 | Discord | 渠道组件（Gateway 长连接，不需公网） | ✅ | 私聊、服务器频道 @ 对话；附件、回复 / 编辑 / 表情回应等事件 |
 | Lark（国际版） | 渠道组件（Lark 自建应用，长连接） | ✅ | 私聊、群聊 @ 对话，收发图片；可授权办公能力（文档 / 表格 / 日历等） |
@@ -42,7 +42,7 @@
 
 | 应用 | 接入方式 | 支持场景 | 访问控制模式 | 是否需要公网回调 | 实测情况 |
 |---|---|---|---|---|---|
-| Microsoft Teams | 渠道组件 + Azure 机器人注册 + Teams 应用包（manifest） | 私聊 / 群聊 / Team 频道 | 私聊：owner / allowlist / open / pairing / disabled；群聊：disabled / allowlist / open + 群内成员白名单；mention / smart | **需要**（HTTPS 消息接收地址） | ✅ 私聊、群聊（mention 模式）已验证，私聊可并入统一上下文；Team 频道 / 文件 / 语音未测 |
+| Microsoft Teams | 渠道组件 + Azure 机器人注册 + Teams 应用包（manifest） | 私聊 / 群聊 / Team 频道 | 私聊：owner / allowlist / open / pairing / disabled；群聊：disabled / allowlist / open + 群内成员白名单；mention / smart | **需要**（HTTPS 消息接收地址） | ✅ 私聊、群聊、Team 频道（mention 模式）已验证，私聊可并入统一上下文；收图片 / 文件 / 音视频 ✅，发图片 ✅；发其他文件 ❌、语音消息 ❌（平台限制） |
 | Slack | 渠道组件 + Slack App（Socket Mode） | 私聊 / 公开频道 / 私有频道（线程） | 私聊：owner / allowlist / open；频道：disabled / allowlist / open；mention / smart | **不需要**（Socket Mode）；webhook 模式才需要 | ✅ 私聊、频道 @ 已验证，私聊可并入统一上下文 |
 | Discord | 渠道组件 + Discord Bot（Gateway 长连接） | 私聊 / 服务器频道 / 子线程 | 私聊：owner / allowlist / open / pairing；服务器：disabled / allowlist / open + 频道成员白名单；mention / smart | **不需要** | ✅ 私聊、服务器频道 @ 已验证，私聊可并入统一上下文 |
 | Gmail | ① OpenMax 连接器（OAuth 授权）② 应用专用密码 + IMAP/SMTP | 邮箱（非聊天） | 连接器：由平台授权控制；IMAP：密码只存机器人本机 | 不需要 | ✅ 两种方式均已验证；推荐 IMAP/SMTP（更稳定），连接器作补充 |
@@ -64,7 +64,7 @@
 | Telegram | ✅ | 私聊 ✅；群消息监控 ✅；群内 @ 回复 ⬜ | 中国大陆服务器需配代理 |
 | 钉钉 | ⚠️ | 私聊 ✅；群聊 ⬜ | 私聊可并入统一上下文 |
 | WhatsApp | ✅ | owner 自聊、白名单私聊、群聊 @、引用回复 ✅ | 非官方商业 API，以 owner 个人号身份发言 |
-| Microsoft Teams | ✅ | 私聊 + 群聊（mention）✅ |  |
+| Microsoft Teams | ✅ | 私聊 + 群聊（mention）✅<br>Team 频道（mention，加进团队自动登记）✅<br>收图片 / PDF / 音视频文件 ✅<br>发图片 ✅<br>发其他文件 ❌<br>语音消息 ❌<br>音视频转文字 ✅（需机器人端开通转写） | 机器人只能发图片；与机器人的聊天里没有录音按钮（Teams 平台限制）；10-19 实测 |
 | Slack | ✅ | 私聊、频道 @ ✅ |  |
 | Discord | ✅ | 私聊、服务器频道 @ ✅ |  |
 | LINE | ✅ | 私聊、群聊 @、图片、@所有人、引用回复 ✅ | 群里暂无 mention / smart 开关 |
