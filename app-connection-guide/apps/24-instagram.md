@@ -2,7 +2,7 @@
 
 > 摘自《应用连接文档（AI 员工接入各应用指南）》第 24 章（完整版见 [../README.md](../README.md)）。状态图例：✅ 已实测可用；⚠️ 部分可用 / 有已知问题；❌ 当前不可用；⬜ 未测试。
 
-Instagram（简称 IG）是 Meta 旗下的图片 / 短视频社交平台，可以理解为海外版的「小红书 + 抖音」：发图文帖、短视频（Reels），和粉丝通过评论、私信互动，品牌和商家常用来做海外营销。通过 **OpenMax Instagram 连接器**接入，OAuth 授权，**代理模式（proxy）**，共 16 个动作。实测：**读数据、发帖、评论全部通过**；私信未测。
+Instagram（简称 IG）是 Meta 旗下的图片 / 短视频社交平台，可以理解为海外版的「小红书 + 抖音」：发图文帖、短视频（Reels），和粉丝通过评论、私信互动，品牌和商家常用来做海外营销。通过 **OpenMax Instagram 连接器**接入，OAuth 授权，**代理模式（proxy）**，共 16 个动作。实测：**读数据、发帖、评论全部通过**；私信暂不测试。
 
 ## 能做什么
 
@@ -10,7 +10,7 @@ Instagram（简称 IG）是 Meta 旗下的图片 / 短视频社交平台，可�
 - 看数据：账号资料 `GET_USER_INFO`（粉丝 / 关注 / 帖子数）、帖子列表 `GET_USER_MEDIA`、单帖数据 `GET_POST_INSIGHTS`、账号数据 `GET_USER_INSIGHTS`。
 - 评论：评论列表 `GET_POST_COMMENTS`、回复评论 `REPLY_TO_COMMENT`。
 - 私信：会话列表 / 会话详情 / 消息列表 `LIST_ALL_CONVERSATIONS` / `GET_CONVERSATION` / `LIST_ALL_MESSAGES`、发文字 / 图片私信 `SEND_TEXT_MESSAGE` / `SEND_IMAGE`、标记已读 `MARK_SEEN`。
-- ❌ 不能删帖、改帖（连接器没有这两个动作）。替代办法：在 Instagram App 里手动删除或编辑。
+- ❌ 不能删帖、改帖（连接器没有这两个动作）。替代办法：在 Instagram App 里手动删除或编辑。另：OpenMax 新上线官方 Meta（Facebook / Instagram）连接器，暂不测试（10-19）。
 
 ## 前置条件 / 所需权限 / 账号
 
@@ -37,7 +37,7 @@ Instagram（简称 IG）是 Meta 旗下的图片 / 短视频社交平台，可�
 | 读评论（含评论人 / 时间） | GET_POST_COMMENTS | ✅ |
 | 回复评论 | REPLY_TO_COMMENT | ✅ 回复显示在原评论下 |
 | 私信会话列表 | LIST_ALL_CONVERSATIONS | ✅ 接口正常（列表为空） |
-| 私信读 / 回 / 标已读 | LIST_ALL_MESSAGES / SEND_TEXT_MESSAGE / MARK_SEEN | ⬜ 未测（需另一个账号先发私信才能测） |
+| 私信读 / 回 / 标已读 | LIST_ALL_MESSAGES / SEND_TEXT_MESSAGE / MARK_SEEN | 暂不测试（需另一个账号先发私信才能测） |
 
 ## 踩坑记录与解决办法
 

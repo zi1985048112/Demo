@@ -6,7 +6,7 @@ Zoho 是海外常用的一整套企业 SaaS 软件（CRM、财务记账、开票
 
 ## 能做什么
 
-- OpenMax 的 7 个 Zoho 连接器：Zoho CRM `zoho`（6 个动作，本章所测）、Zoho Bigin `zoho_bigin`（面向小团队的简版 CRM，12 个动作，未测）、Zoho Invoice `zoho_invoice`（开票，6 个动作，只读，未测）；Zoho Books / Desk / Inventory / Mail（`zoho_books` / `zoho_desk` / `zoho_inventory` / `zoho_mail`）4 个连接器目前 **暂无可用功能（0 个动作）**，财务、客服、库存、邮箱场景请在对应的 Zoho 网页后台操作。
+- OpenMax 的 7 个 Zoho 连接器：Zoho CRM `zoho`（6 个动作，本章所测）、Zoho Bigin `zoho_bigin`（面向小团队的简版 CRM，12 个动作，暂不测试）、Zoho Invoice `zoho_invoice`（开票，6 个动作，只读，暂不测试）；Zoho Books / Desk / Inventory / Mail（`zoho_books` / `zoho_desk` / `zoho_inventory` / `zoho_mail`）4 个连接器目前 **暂无可用功能（0 个动作）**，财务、客服、库存、邮箱场景请在对应的 Zoho 网页后台操作。
 - 读：按模块读取记录 `ZOHO_GET_ZOHO_RECORDS`，模块可选线索 Leads / 联系人 Contacts / 客户 Accounts / 商机 Deals，可指定只返回部分字段。
 - 写：新建记录 `ZOHO_CREATE_ZOHO_RECORD`（线索、商机等）、修改记录 `ZOHO_UPDATE_ZOHO_RECORD`、新建标签 `ZOHO_CREATE_ZOHO_TAG`。
 - 线索转化：把线索转成联系人 + 客户 `ZOHO_CONVERT_ZOHO_LEAD`。

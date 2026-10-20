@@ -52,7 +52,7 @@
 - **含义**：同一个人在多个渠道的**一对一私聊**里，机器人把它们视为“同一个人、同一段对话”——在飞书交代的事，到 Teams/Slack/Discord 私聊里接着说，机器人都记得。
 - **并入流程**：每接入一个新渠道，先在新渠道私聊打招呼 → 在已经确认过身份的渠道（如 Lark / 飞书私聊）里交叉核对“是不是你本人” → owner 明确同意后才并入。
 - **边界（始终保持）**：只打通 owner 本人的一对一私聊；**群聊内容、客户/同事等第三方数据不会被带进私聊上下文**；随时可以取消或让某个话题不互通。
-- **已验证可并入的渠道**：OpenMax、Lark、WhatsApp、Slack、Discord、Zalo、钉钉、Microsoft Teams；飞书（国内）、企业微信、个人微信、Telegram、LINE 暂未验证并入。群聊（如 Teams 群、Discord 频道）不在互通范围内。
+- **已验证可并入的渠道**：OpenMax、Lark、WhatsApp、Slack、Discord、Zalo、钉钉、Microsoft Teams、飞书（国内）、企业微信、个人微信、Telegram；LINE 并入暂不测试。群聊（如 Teams 群、Discord 频道）不在互通范围内。
 
 ![owner 明确要求“两边上下文打通”后，机器人确认打通范围与边界](../images/common-bridge-confirm.png)
 

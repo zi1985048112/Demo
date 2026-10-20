@@ -50,7 +50,7 @@
 | 信息 | 备注 |
 |---|---|
 | 选择路线 | 连接器（owner 自行授权）/ IMAP+SMTP（推荐） |
-| 是个人 Gmail 还是 Google Workspace | Workspace 可能禁用应用专用密码 |
+| 是个人 Gmail 还是 Google Workspace | Workspace 账号可用（10-20 实测），但管理员可能禁用应用专用密码 / IMAP；生成时确认登录的是企业账号 |
 | 两步验证是否开启 | IMAP 路线必须 |
 | 16 位应用专用密码 | 私聊提供 |
 | 需要的功能 | 代发 / 读信摘要 / 回复监控（推送到哪个渠道） |
